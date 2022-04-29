@@ -52,7 +52,7 @@ function Edit-PSProfile()
 
 function Update-PSProfile
 {
-   Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/SUBnet192/Scripts/master/psprofile.ps1" -OutFile $PROFILE.AllusersAllHosts
+   Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/SUBnet192/Build/master/psprofile.ps1" -OutFile $PROFILE.AllusersAllHosts
 }
 
 #======================================================================================
