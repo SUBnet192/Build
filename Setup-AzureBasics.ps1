@@ -20,7 +20,7 @@ Set-Timezone "Eastern Standard Time"
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
 
 # Create default powershell profile for All Users / All Hosts
-Invoke-WebRequest -usebasicparsing -Uri "https://raw.githubusercontent.com/SUBnet192/Scripts/master/psprofile.ps1" -Outfile $PROFILE.AllusersAllHosts
+Invoke-WebRequest -usebasicparsing -Uri "https://raw.githubusercontent.com/SUBnet192/Build/master/psprofile.ps1" -Outfile $PROFILE.AllusersAllHosts
 
 # Execute Windows Update
 Install-WindowsUpdate -Confirm: $False
