@@ -1,5 +1,5 @@
 # Call this script from a powershell command prompt using this command:
-# Invoke-WebRequest -usebasicparsing -uri "https://raw.githubusercontent.com/SUBnet192/Scripts/master/Setup-AzureBasics.ps1" | Invoke-Expression
+# Invoke-WebRequest -usebasicparsing -uri "https://raw.githubusercontent.com/SUBnet192/Build/master/Setup-AzureBasics.ps1" | Invoke-Expression
 
 # Trust PowerShell Gallery
 Set-PSRepository PSGallery -InstallationPolicy Trusted | Out-Null
