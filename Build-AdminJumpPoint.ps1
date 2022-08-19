@@ -132,7 +132,7 @@ New-Item -Path C:\ -Name Scripts -ItemType Directory -Force
 New-Item -Path C:\ -Name Sources -ItemType Directory -Force
 
 # Create default powershell profile for All Users / All Hosts
-Get-WebFile -URL "https://raw.githubusercontent.com/SUBnet192/Scripts/master/psprofile.ps1" -File $PROFILE.AllusersAllHosts
+Get-WebFile -URL "https://raw.githubusercontent.com/SUBnet192/Build/master/psprofile.ps1" -File $PROFILE.AllusersAllHosts
 
 # Install RSAT
 Install-WindowsFeature -IncludeAllSubFeature RSAT
