@@ -27,7 +27,7 @@ Set-WmiInstance -InputObject ( Get-WmiObject -Class Win32_volume -Filter "DriveL
 
 # Install latest VMware Tools
 # https://raw.githubusercontent.com/haavarstein/Applications/master/VMware/Tools/Install.ps1
-Invoke-WebRequest -usebasicparsing -uri "https://raw.githubusercontent.com/haavarstein/Applications/master/VMware/Tools/Install.ps1" | Invoke-Expression
+# Invoke-WebRequest -usebasicparsing -uri "https://raw.githubusercontent.com/haavarstein/Applications/master/VMware/Tools/Install.ps1" | Invoke-Expression
 
 # Create default powershell profile for All Users / All Hosts
 Invoke-WebRequest -usebasicparsing -Uri "https://raw.githubusercontent.com/SUBnet192/Build/master/psprofile.ps1" -Outfile $PROFILE.AllusersAllHosts
