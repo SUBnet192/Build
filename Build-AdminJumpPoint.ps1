@@ -141,7 +141,7 @@ Install-WindowsFeature -IncludeAllSubFeature RSAT
 Install-Module -Name Az
 Install-Module -Name AzureAD
 Install-Module -Name MSOnline
-Install-Module -Name Microsoft.Online.SharePoint.PowerShell
+Install-Module -Name Microsoft.Graph
 Install-Module -Name ExchangeOnlineManagement
 Install-Module -Name MicrosoftTeams
 
