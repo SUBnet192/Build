@@ -197,11 +197,10 @@ Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i
 Remove-Item -Path C:\Temp -Recurse -Force
 
 # Install WAC
-$dlPath = 'C:\Sources\WAC.msi'
-Get-WebFile -URL 'http://aka.ms/WACDownload' -File $dlPath
-
-$port = 443
-msiexec /i $dlPath /qn /L*v log.txt SME_PORT=$port SSL_CERTIFICATE_OPTION=generate
+# $dlPath = 'C:\Sources\WAC.msi'
+# Get-WebFile -URL 'http://aka.ms/WACDownload' -File $dlPath
+# $port = 443
+# msiexec /i $dlPath /qn /L*v log.txt SME_PORT=$port SSL_CERTIFICATE_OPTION=generate
 
 # Reboot to complete installation
 Restart-Computer
