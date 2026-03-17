@@ -132,7 +132,7 @@ function Update-EveryModule
       }
       if ($GalleryModule.Version -gt $_.Version)
       {
-         if ($SkipMajorVersion -and [int]$GalleryModule.Version.Split('.')[0] -gt [int]$_.Version.Split('.')[0]
+         if ($SkipMajorVersion -and [int]$GalleryModule.Version.Split('.')[0] -gt [int]$_.Version.Split('.')[0])
          {
             Write-Warning "Skipping major version update for module $($_.Name). Galleryversion: $($GalleryModule.Version), local version $($_.Version)"
          }
