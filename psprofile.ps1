@@ -63,7 +63,7 @@ function Set-ModulesUpdateSchedule
 {
    $trigger = New-ScheduledTaskTrigger -Daily -At 5am;
    $action = New-ScheduledTaskAction -Execute "powershell.exe" `
-      -Argument '-Command "Start-Transcript %USERPROFILE%\ModulesUpdate.log; Update-EveryModule -Verbose"'
+      -Argument ('-Command "Start-Transcript {0}\ModulesUpdate.log; Update-EveryModule -Verbose"' -f $env:USERPROFILE)
 
    $task = Get-ScheduledTask -TaskName 'Update Every PSModule' -ErrorAction:SilentlyContinue
    if ($null -eq $task)
@@ -132,7 +132,7 @@ function Update-EveryModule
       }
       if ($GalleryModule.Version -gt $_.Version)
       {
-         if ($SkipMajorVersion -and $GalleryModule.Version.Split('.')[0] -gt $_.Version.Split('.')[0])
+         if ($SkipMajorVersion -and [int]$GalleryModule.Version.Split('.')[0] -gt [int]$_.Version.Split('.')[0]
          {
             Write-Warning "Skipping major version update for module $($_.Name). Galleryversion: $($GalleryModule.Version), local version $($_.Version)"
          }
@@ -495,11 +495,6 @@ function Show-MOTD
 
 $GLOBAL:go_locations = @{ }
 
-if ( $GLOBAL:go_locations -eq $null )
-{
-   $GLOBAL:go_locations = @{ }
-}
-
 function Go ([string] $location)
 {
    if ( $go_locations.ContainsKey($location) )
@@ -546,6 +541,10 @@ Set-Alias -Name Halt -Value Stop-Computer
 #======================================================================================
 
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+if (!(Test-Path 'C:\Scripts')) {
+    New-Item -ItemType Directory -Path 'C:\Scripts' | Out-Null
+}
 Go scripts
 
 #======================================================================================
